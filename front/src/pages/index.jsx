@@ -1,4 +1,13 @@
+import { useEffect } from "react";
+
 function Inicial() {
+    const [produtos, useProdutos] = useEffect([]);
+    const produtos_all = () => {
+        fetch('https://jsonplaceholder.typicode.com/posts')
+        .then((r) => r.json())
+        .then((r) => setPosts(r));
+    }
+
     return (
         <>
             <h4>Produtos</h4>
